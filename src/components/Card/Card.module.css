@@ -153,6 +153,39 @@
     cursor: pointer;
     color: white;
 }
+.winner{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url("https://media1.giphy.com/media/ygNrcLsFcOymvmbXiJ/giphy.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+.winner_card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+}
+.winner_card h3{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 2.5em;
+    color: #fffc64;
+    margin-bottom: 10px;
+}
+.winner_card p{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1.5em;
+    color: #e1de31;
+    margin-bottom: 2px;
+}
 @media screen and (max-width: 768px) {
     .card_text{
         font-size: 1.6rem;

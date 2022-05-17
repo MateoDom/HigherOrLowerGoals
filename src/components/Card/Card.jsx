@@ -15,6 +15,7 @@ function Card() {
     const [playing, setPlaying] = useState(true);
     const [showGoal, setShowGoal] = useState(false)
     const [gameOver, setGameOver] = useState(false);
+    const [win, setWin] = useState(false);
 
     useEffect(() => { 
     const randomPlayer = player.sort(() => Math.random() - 0.5);
@@ -26,8 +27,12 @@ function Card() {
   useEffect(()=> {
 
   if(score === 13){
-    alert("You won!")
-    window.location.reload();
+    setTimeout(()=>{
+      setWin(true);
+      setPlaying(false);
+
+
+    },1000)
   }
 },[score])
   useEffect(() => {
@@ -146,7 +151,16 @@ function Card() {
       <button className={`${s.btn} ${correct && s.correct} ${userLost && s.incorrect}`}>{correct? "✔" : userLost? "X" : "VS"} </button>
       <p className={s.score}>Score: {score}</p>
     </div>)
-: <div className={s.game_over} >
+: win && !gameOver? (<div className={s.winner}>
+          <div className={s.winner_card}>
+            <h3>Congratulations!!</h3>
+            <p>You are the winner!</p>
+            <p>Thank you very much for playing!</p>
+            <p className={s.creator}><a rel="noopener noreferrer" href="https://github.com/MateoDom" target="_blank">Created By Mateo Dominguez</a></p>
+            <button onClick={()=> window.location.reload()} className={s.card_btn_hl}>Play Again</button>         
+          </div>
+      </div>):
+ <div className={s.game_over} >
     <div className={s.game_over_text}>
       <h3>Game Over!</h3>
       <p>You scored:</p>
