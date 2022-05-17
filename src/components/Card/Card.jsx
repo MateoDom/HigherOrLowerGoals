@@ -18,7 +18,6 @@ function Card() {
 
     useEffect(() => { 
     const randomPlayer = player.sort(() => Math.random() - 0.5);
-      console.log(randomPlayer)
       const initialPlayers = randomPlayer.slice(0, 2);
       setCurrentPlayers([...initialPlayers]);
     
