@@ -13,6 +13,7 @@ function Card() {
     const [correct, setCorrect] = useState(false);
     const [userLost, setUserLost] = useState(false);
     const [playing, setPlaying] = useState(true);
+    const [showGoal, setShowGoal] = useState(false)
     const [gameOver, setGameOver] = useState(false);
 
     useEffect(() => { 
@@ -47,6 +48,7 @@ function Card() {
   },[currentPlayers]);
 
   const changePlayers= () => {
+    setShowGoal(false)
     const newP2 = [player[0]]
     setPlayerOne([currentPlayers[1]]);
     setPlayerTwo(newP2);;  
@@ -56,25 +58,39 @@ function Card() {
 }
   const higherGoals = (player1, player2) => {
     if(player1.goals > player2.goals){
-
+        setShowGoal(true)
         setUserLost(true);
-        setGameOver(true);
+        setTimeout(()=>{
+          setGameOver(true)},2000)
         }
     if(player2.goals > player1.goals){
+      setShowGoal(true)
         setScore(score + 1)
         setCorrect(true);
-        changePlayers()}
+        setTimeout(()=>{
+
+          changePlayers()
+        }, 2000)
+      }
     
   }
   const lowerGoals = (player1, player2) => {
     if(player1.goals < player2.goals){
-        
+        setShowGoal(true)
         setUserLost(true);
-        setGameOver(true);}
+        setTimeout(()=>{
+          setGameOver(true)},2000)
+
+        }
+      
     if(player2.goals < player1.goals){
+      setShowGoal(true)
         setScore(score + 1)
         setCorrect(true);
-        changePlayers()
+        setTimeout(()=>{
+
+          changePlayers()
+        }, 2000)
     }
   }
   return (
@@ -110,19 +126,23 @@ function Card() {
         <div className={s.card_info}>
           <h2 className={s.card_text}>{player && player.name}</h2>
           <p className={s.card_text_scored}>has</p> 
-    
-             <button onClick={()=>higherGoals(playerOne[0], playerTwo[0])}className={s.card_btn_hl}>
+            {showGoal? <p className={s.card_text_goals}>{player && player.goals}</p>: <div>
+
+            <button onClick={()=>higherGoals(playerOne[0], playerTwo[0])}className={s.card_btn_hl}>
             Higher
             </button>
-          <button onClick={()=> lowerGoals(playerOne[0], playerTwo[0])} className={s.card_btn_hl}>
+          <button onClick={()=> lowerGoals(playerOne[0], playerTwo[0])} className={s.card_btn_hl} >
             Lower
           </button>
+          </div>
+          }
+
           <p className={s.card_text_scored}>goals</p>
         </div>
       </div>
  
  ))}
-      <button className={`${s.btn} ${correct && s.correct} `}>{correct? "✔" : "VS"} </button>
+      <button className={`${s.btn} ${correct && s.correct} ${userLost && s.incorrect}`}>{correct? "✔" : userLost? "X" : "VS"} </button>
       <p className={s.score}>Score: {score}</p>
     </div>)
 : <div className={s.game_over} >
