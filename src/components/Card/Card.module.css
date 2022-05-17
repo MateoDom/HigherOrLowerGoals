@@ -186,6 +186,16 @@
     color: #e1de31;
     margin-bottom: 2px;
 }
+.c_score{
+    font-family: "Roboto", sans-serif;
+    position: absolute;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 10px;
+    color: white;
+    bottom: 0;
+    right: 0;
+}
 @media screen and (max-width: 768px) {
     .card_text{
         font-size: 1.6rem;

@@ -17,6 +17,17 @@ function Card() {
     const [gameOver, setGameOver] = useState(false);
     const [win, setWin] = useState(false);
 
+    var highscore = localStorage.getItem("highscore");
+    
+    if(highscore !== null){
+        if (score > highscore) {
+            localStorage.setItem("highscore", score);      
+        }
+    }
+    else{
+        localStorage.setItem("highscore", score);
+    }
+
     useEffect(() => { 
     const randomPlayer = player.sort(() => Math.random() - 0.5);
       const initialPlayers = randomPlayer.slice(0, 2);
@@ -144,19 +155,20 @@ function Card() {
           <p className={s.card_text_scored}>goals</p>
         </div>
         
-        <p className={s.creator}><a  rel="noopener noreferrer" target="_blank" href="https://github.com/MateoDom">Created By Mateo Dominguez</a></p>
+        <p className={s.creator}><a  rel="noopener noreferrer" target="_blank" href="https://github.com/MateoDom">Created By MateoDom</a></p>
       </div>
  
  ))}
       <button className={`${s.btn} ${correct && s.correct} ${userLost && s.incorrect}`}>{correct? "✔" : userLost? "X" : "VS"} </button>
-      <p className={s.score}>Score: {score}</p>
+      <p className={s.score}>High Score: {highscore}</p>
+      <p className={s.c_score}>Score: {score}</p>
     </div>)
 : win && !gameOver? (<div className={s.winner}>
           <div className={s.winner_card}>
             <h3>Congratulations!!</h3>
             <p>You are the winner!</p>
             <p>Thank you very much for playing!</p>
-            <p className={s.creator}><a rel="noopener noreferrer" href="https://github.com/MateoDom" target="_blank">Created By Mateo Dominguez</a></p>
+            <p className={s.creator}><a rel="noopener noreferrer" href="https://github.com/MateoDom" target="_blank">Created By MateoDom</a></p>
             <button onClick={()=> window.location.reload()} className={s.card_btn_hl}>Play Again</button>         
           </div>
       </div>):
@@ -167,7 +179,7 @@ function Card() {
       <p>{score}</p>
     </div>
     <button onClick={()=> window.location.reload()} className={s.card_btn_hl}>Play Again</button>
-    <p className={s.creator}><a rel="noopener noreferrer" href="https://github.com/MateoDom" target="_blank">Created By Mateo Dominguez</a></p>
+    <p className={s.creator}><a rel="noopener noreferrer" href="https://github.com/MateoDom" target="_blank">Created By MateoDom</a></p>
     </div>}
   
  </>
