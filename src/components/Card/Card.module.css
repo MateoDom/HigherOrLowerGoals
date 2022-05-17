@@ -139,6 +139,17 @@
 }
 
 
+.creator{
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    font-weight: 200;
+    font-size: .9em;
+}
+
 @media screen and (max-width: 768px) {
     .btn {
         height: 50px;

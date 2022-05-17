@@ -139,6 +139,7 @@ function Card() {
 
           <p className={s.card_text_scored}>goals</p>
         </div>
+        <p className={s.creator}>Created By Mateo Dominguez</p>
       </div>
  
  ))}
@@ -152,6 +153,7 @@ function Card() {
       <p>{score}</p>
     </div>
     <button onClick={()=> window.location.reload()} className={s.card_btn_hl}>Play Again</button>
+    <p className={s.creator}>Created By Mateo Dominguez</p>
     </div>}
   
  </>
