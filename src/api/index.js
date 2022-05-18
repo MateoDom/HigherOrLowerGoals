@@ -2,14 +2,14 @@ const players = [{
     player_id: 1,
     name: 'Cristiano Ronaldo',
     age:37,
-    goals: 803,
+    goals: 813,
     picture: "https://cloudfront-us-east-1.images.arcpublishing.com/infobae/4UYO6HTLFWRQ7DQDPUHNZ6DIRI.jpg"
     },
     {
         player_id: 2,
         name: 'Lionel Messi',
     age:34,
-    goals: 758  ,
+    goals: 764  ,
     picture: "https://atalayar.com/sites/default/files/styles/foto_/public/noticias/Atalayar_Leo%20Messi%20Barcelona_0.jpg?itok=moY7JlzF",
     },
     {
@@ -78,7 +78,42 @@ const players = [{
         name: "Maradona" ,
         goals:346 ,
         picture: "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F21%2F2015%2F10%2Fgettyimages-1923724_master.jpg&w=400&h=532&c=sc&poi=face&q=60"
-       }
+       },
+       {player_id: 15,
+        name: "Ronaldo" ,  
+        goals: 414,
+        picture: "https://tmssl.akamaized.net/images/foto/galerie/ronaldo-luis-nazario-de-lima-1472042256-5977.jpg?lm=1483606131",
+        },{
+            player_id: 16,
+            name: "Ronaldinho",
+            goals: 301,
+            picture: "https://e.rpp-noticias.io/normal/2021/11/25/531453_1179777.jpg"
+        },
+        {
+            player_id: 17,
+            name: "Jimmy Jones",
+            goals: 647,
+            picture: "http://www.belfastceltic.org/images/jjonesball.jpg"
+        },
+        {
+            player_id: 18,
+            name: "Zico",
+            goals: 522,
+            picture: "https://tmssl.akamaized.net/images/foto/galerie/zico-brazil-1630324243-69988.jpg?lm=1630324292",
+        },{
+            player_id: 19,
+            name: "Di Estefano",
+            goals: 509,
+            picture: "http://personajeshistoricos.com/wp-content/uploads/2018/06/alfredo-di-stefano-1.jpg"
+        },
+        {
+            player_id: 20,
+            name: "Rooney",
+            goals: 366,
+            picture: "https://phantom-marca.unidadeditorial.es/d8a0667384ea366bad5daed3d9ddda7f/resize/1320/f/jpg/assets/multimedia/imagenes/2022/02/10/16444851258946.jpg"
+        }
+        
+
 
 ]
 export default players
