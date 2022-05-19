@@ -115,13 +115,13 @@ const players = [{
             player_id: 21,
             name: "Kaka",
             goals: 161,
-            picture: "https://depor.com/resizer/6G-Calaq93309BXol2l8-0ZgX90=/980x0/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/3VIQ2KGAAJBSVKZHR7Q2THS7OQ.jpg"
+            picture: "https://football-italia.net/wp-content/uploads/2022/04/h_51116120.jpg"
         },
         {
             player_id: 22,
             name: "Benzema",
             goals: 400,
-            picture: "https://images.ecestaticos.com/LkXRwuT-xriLFUqMdxTRkjyz-Kg=/0x0:2272x1671/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F3d3%2F3e2%2Fdf8%2F3d33e2df89f7d34d33c2cfad48a72e7c.jpg" 
+            picture: "https://assets-es.imgfoot.com/media/cache/1200x1200/champions-league-real-madrid-shakhtar-donetsk-karim-benzema.jpg" 
         },
         {
             player_id: 23,
