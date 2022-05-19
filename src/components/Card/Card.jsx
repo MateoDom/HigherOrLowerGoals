@@ -37,7 +37,7 @@ function Card() {
 
   useEffect(()=> {
 
-  if(score === 20){
+  if(score === 25){
     setTimeout(()=>{
       setWin(true);
       setPlaying(false);
